@@ -7,6 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.BasicPage;
+import pages.CityPage;
+
+import static Constants.Consts.*;
 
 public class SearchCheck {
     private static ChromeDriver driver;
@@ -28,11 +31,14 @@ public class SearchCheck {
     @Test
     public void searchHotelInCity(){
         BasicPage basicPage = new BasicPage(driver);
+        CityPage cityPage = new CityPage(driver);
 
-        basicPage.enterCityName("NewYork");
-        basicPage.enterCheckInAndCheckOutDate(Month.April, 19,Month.May, 18, 2022);
+        basicPage.enterCityName(city);
+        basicPage.enterCheckInAndCheckOutDate(checkInMonth, checkInDay, checkOutMonth, checkOutDay, checkInYear);
         basicPage.clickSearch();
 
+        cityPage.checkCity(city);
+        cityPage.checkDate(checkInMonth, checkInDay, checkOutMonth, checkOutDay, checkInYear);
 
     }
 

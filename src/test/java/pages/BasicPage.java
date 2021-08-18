@@ -20,7 +20,7 @@ public class BasicPage {
     public void enterCheckInAndCheckOutDate(Month checkInMonth, int chekInDay, Month checkOutMonth, int chekOutDay, int year){
         driver.findElement(By.cssSelector("div[class=\"xp__dates xp__group\"]")).click();
         findMonthAndDayThenClick(checkInMonth,chekInDay,year);
-        findMonthAndDayThenClick(checkOutMonth,chekInDay,year);
+        findMonthAndDayThenClick(checkOutMonth,chekOutDay,year);
     }
 
     private void findMonthAndDayThenClick(Month month, int day, int year){
