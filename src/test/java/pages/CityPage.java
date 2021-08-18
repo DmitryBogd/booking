@@ -1,12 +1,12 @@
 package pages;
 
 import Constants.Month;
-import com.booking.SearchCheck;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.sql.Driver;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class CityPage {
         driver.findElement(By.id("av-summary-checkin")).click();
 
 
-        if(!driver.findElement(By.xpath("//span[contains(text(),'"+ chekInDay+ " " + checkInMonth + " "+ year+ "')]")).isEnabled()&&!driver.findElement(By.xpath("//span[contains(text(),'"+ chekOutDay+ " " + checkOutMonth + " "+ year+ "')]")).isEnabled()) {
+        if(driver.findElement(By.xpath("//span[contains(text(),'"+ chekInDay+ " " + checkInMonth + " "+ year+ "')]")).isEnabled()&&driver.findElement(By.xpath("//span[contains(text(),'"+ chekOutDay+ " " + checkOutMonth + " "+ year+ "')]")).isEnabled()) {
             driver.close();
             driver.switchTo().window(tabs2.get(0));
             return true;
